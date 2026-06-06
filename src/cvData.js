@@ -21,7 +21,7 @@ export const cvData = {
     telefono: "+56 9 6532 0385",
     ubicacion: "Santiago, Chile",
     github: "https://github.com/argeniszamora",
-    linkedin: "https://linkedin.com/in/tu-usuario", // 👈 reemplaza con tu URL real de LinkedIn
+    linkedin: "https://www.linkedin.com/in/growth-marketing-argenis/",
     sitio: "",
   },
 

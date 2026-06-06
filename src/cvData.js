@@ -36,6 +36,17 @@ export const cvData = {
   // ---- Experiencia laboral ----
   experiencia: [
     {
+      puesto: "Growth & Performance Manager",
+      empresa: "Keenfounders (Cliente: Lasertam) · Híbrido",
+      periodo: "2025 – Presente",
+      descripcion: [
+        "Lidero la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
+        "Gestiono campañas de paid media (Meta y Google Ads) con enfoque data-driven: análisis de CTR, CPL y ROAS para optimizar la inversión y escalar cotizaciones.",
+        "Diseño, armo y envío campañas de email marketing para nurturing, conversión y retención de clientes.",
+        "Desarrollé un sistema automatizado de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions, optimizando el posicionamiento de precios por zona.",
+      ],
+    },
+    {
       puesto: "Especialista Paid Media (Freelance)",
       empresa: "Admente · Remoto",
       periodo: "Jul 2025 – Presente",

@@ -36,9 +36,9 @@ export const cvData = {
   // ---- Experiencia laboral ----
   experiencia: [
     {
-      puesto: "Growth & Performance Manager",
+      puesto: "Growth Marketing Specialist",
       empresa: "Keenfounders (Cliente: Lasertam) · Híbrido",
-      periodo: "2025 – Presente",
+      periodo: "Oct 2025 – Presente",
       descripcion: [
         "Lidero la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
         "Gestiono campañas de paid media (Meta y Google Ads) con enfoque data-driven: análisis de CTR, CPL y ROAS para optimizar la inversión y escalar cotizaciones.",

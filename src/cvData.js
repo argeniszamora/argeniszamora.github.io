@@ -37,7 +37,7 @@ export const cvData = {
   experiencia: [
     {
       puesto: "Growth Marketing Specialist",
-      empresa: "Keenfounders (Cliente: Lasertam) · Híbrido",
+      empresa: "Keenfounders (Cliente: Lasertam) · Santiago, Chile · Híbrido",
       periodo: "Oct 2025 – Presente",
       descripcion: [
         "Lidero y presento la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",

@@ -7,6 +7,14 @@ export const cvData = {
   // ---- Datos personales ----
   nombre: "Argenis Zamora",
   titulo: "Digital Marketing Manager | Growth & Performance",
+  // Roles que rotan con efecto de máquina de escribir en el hero
+  roles: [
+    "Growth & Performance",
+    "Paid Media (Meta & Google)",
+    "Marketing Automation",
+    "Data & Analytics",
+    "SEO técnico",
+  ],
   resumen:
     "Especialista en marketing digital con +6 años de experiencia diseñando y ejecutando " +
     "estrategias integrales de growth, performance y posicionamiento orgánico en mercados de " +

@@ -4,6 +4,57 @@
 
 .cv { width: 100%; }
 
+/* ---------- CURSOR GLOW (sigue el mouse) ---------- */
+.cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 480px; height: 480px;
+  margin: -240px 0 0 -240px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.08), transparent 60%);
+  will-change: transform;
+}
+@media (max-width: 768px) { .cursor-glow { display: none; } }
+
+/* ---------- TYPEWRITER ---------- */
+.hero-roles {
+  font-family: var(--mono);
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  color: var(--accent);
+  margin: 0.6rem 0 0.2rem;
+  min-height: 1.6em;
+}
+.hero-roles-pre { opacity: 0.6; }
+.typed { font-weight: 500; }
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  background: var(--accent);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- SPOTLIGHT en tarjetas ---------- */
+.card, .stat, .cta { position: relative; }
+.card::before, .stat::before, .cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(52, 211, 153, 0.14), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+  z-index: 0;
+}
+.card:hover::before, .stat:hover::before, .cta:hover::before { opacity: 1; }
+.card > *, .stat > *, .cta > * { position: relative; z-index: 1; }
+
 /* ---------- SCROLL PROGRESS ---------- */
 .progress {
   position: fixed;

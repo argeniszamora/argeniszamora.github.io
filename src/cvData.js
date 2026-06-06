@@ -40,13 +40,11 @@ export const cvData = {
       empresa: "Keenfounders (Cliente: Lasertam) · Híbrido",
       periodo: "Oct 2025 – Presente",
       descripcion: [
-        "Lidero la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
-        "Gestiono campañas de paid media (Meta y Google Ads) con enfoque data-driven: análisis de CTR, CPL y ROAS para optimizar la inversión y escalar cotizaciones.",
-        "Mantengo el monitoreo de conversiones reales y su trazabilidad end-to-end, asegurando atribución y analítica confiables para la toma de decisiones.",
-        "Automatizo la generación de reportes e informes de performance conectando las APIs de las plataformas (Meta, Google, GA4) y procesándolas con IA (Claude Code), eliminando trabajo manual y acelerando la entrega de insights accionables.",
+        "Lidero y presento la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
+        "Gestiono campañas de paid media (Meta y Google Ads) con enfoque data-driven: optimizo CTR, CPL y ROAS para escalar cotizaciones y ventas.",
+        "Aseguro el monitoreo de conversiones reales y su trazabilidad, y automatizo la reportería conectando las APIs de las plataformas (Meta, Google, GA4) con IA (Claude Code).",
         "Diseño, armo y envío campañas de email marketing orientadas a generar ventas y conversión directa.",
-        "Presento las campañas a stakeholders y apoyo en la coordinación de redes sociales e influencers.",
-        "Desarrollé un sistema automatizado de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions, optimizando el posicionamiento de precios por zona.",
+        "Desarrollé un sistema automatizado de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions.",
       ],
     },
     {

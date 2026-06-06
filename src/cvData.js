@@ -71,7 +71,7 @@ export const cvData = {
     {
       puesto: "SEO & Growth Manager (Clientes: Softys y Nestlé Perú)",
       empresa: "Kinesso · Las Condes, Chile",
-      periodo: "Ene 2021 – Mar 2024",
+      periodo: "2023 – 2024",
       descripcion: [
         "Cliente Softys — Diseñé e implementé estrategia digital regional para 5 países coordinando equipos locales y capacitaciones internas.",
         "Cliente Softys — Lideré SEO de Personal Care: análisis competitivo, optimización técnica y automatización de reportes ejecutivos.",
@@ -82,7 +82,7 @@ export const cvData = {
     {
       puesto: "Especialista SEO y SEM",
       empresa: "Clínica Cela (estética y depilación láser) · Chile y Colombia",
-      periodo: "2020 – 2021",
+      periodo: "2021 – 2023",
       descripcion: [
         "Gestioné campañas multicanal (Google, Meta, LinkedIn, TikTok, Waze) para dos mercados con presupuestos independientes.",
         "Ejecuté auditorías SEO, mejoras de UX y velocidad de sitio, incrementando tráfico orgánico calificado.",

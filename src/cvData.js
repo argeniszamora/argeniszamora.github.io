@@ -27,7 +27,7 @@ export const cvData = {
 
   // ---- Logros destacados (métricas grandes) ----
   logros: [
-    { valor: "18x", texto: "ROAS en Meta Ads — Lasertam (Keenfounders)" },
+    { valor: "≈2x", texto: "ROAS en Meta Ads: de 5.9x a ~10x — Lasertam" },
     { valor: "+80%", texto: "Tráfico orgánico en 4 meses (ATM)" },
     { valor: "+60%", texto: "Leads calificados generados (ATM)" },
     { valor: "5 países", texto: "Estrategia regional liderada (Kinesso)" },
@@ -41,8 +41,8 @@ export const cvData = {
       periodo: "Oct 2025 – Presente",
       descripcion: [
         "Lidero y presento la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
-        "Gestiono ~$6M CLP/mes de inversión en paid media (Meta y Google Ads) con ROAS de ~18x, generando ~$108M CLP en ventas atribuidas en los últimos 90 días.",
-        "Audité y optimicé la cuenta llevando el ROAS de 6.5x a ~18x: eliminé ~14% de gasto desperdiciado y automaticé reportería y atribución conectando las APIs (Meta, Google, GA4, WooCommerce) con IA (Claude Code).",
+        "Gestiono la inversión en paid media (Meta y Google Ads) y casi dupliqué el ROAS promedio de la cuenta: de ~5.9x (base previa a mi incorporación) a ~10x sostenido, excluyendo eventos Cyber.",
+        "Audité y optimicé la cuenta —eliminé ~14% de gasto desperdiciado, corregí objetivos de campaña y saturación de audiencias— y automaticé reportería y atribución conectando las APIs (Meta, Google, GA4, WooCommerce) con IA (Claude Code).",
         "Diseño, armo y envío campañas de email marketing orientadas a generar ventas y conversión directa.",
         "Desarrollé un sistema automatizado de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions.",
       ],

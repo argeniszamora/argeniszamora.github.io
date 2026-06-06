@@ -43,7 +43,7 @@ export const cvData = {
         "Lidero la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
         "Gestiono campañas de paid media (Meta y Google Ads) con enfoque data-driven: análisis de CTR, CPL y ROAS para optimizar la inversión y escalar cotizaciones.",
         "Mantengo el monitoreo de conversiones reales y su trazabilidad end-to-end, asegurando atribución y analítica confiables para la toma de decisiones.",
-        "Genero reportes, informes y dashboards de performance (GA4, Looker Studio) para medir resultados y comunicar insights accionables.",
+        "Automatizo la generación de reportes e informes de performance conectando las APIs de las plataformas (Meta, Google, GA4) y procesándolas con IA (Claude Code), eliminando trabajo manual y acelerando la entrega de insights accionables.",
         "Diseño, armo y envío campañas de email marketing orientadas a generar ventas y conversión directa.",
         "Presento las campañas a stakeholders y apoyo en la coordinación de redes sociales e influencers.",
         "Desarrollé un sistema automatizado de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions, optimizando el posicionamiento de precios por zona.",

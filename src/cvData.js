@@ -23,6 +23,15 @@ export const cvData = {
     "datos con GA4 y Looker Studio. Historial comprobado escalando leads calificados, tráfico " +
     "orgánico y cotizaciones en sectores salud, B2B y consumo masivo.",
 
+  // ---- "¿Sabías que...?" (toast que aparece a los 5s, rota entre estos) ----
+  sabiasQue: [
+    "Combino marketing con código: uso Python, APIs e IA (Claude Code) para automatizar el growth. Un perfil híbrido poco común.",
+    "Casi dupliqué el ROAS de una cuenta de Meta Ads: de ~5.9x a ~10x sostenido (excluyendo eventos Cyber).",
+    "Tengo +6 años escalando growth y performance en 5 países de Latinoamérica.",
+    "Construyo mis propias herramientas: desde un monitor de precios con scraping hasta reportería automatizada por API.",
+    "Trabajé marcas como Softys y Nestlé liderando SEO técnico y estrategia regional.",
+  ],
+
   // ---- Contacto y redes ----
   contacto: {
     email: "zamoraargenis18@gmail.com",

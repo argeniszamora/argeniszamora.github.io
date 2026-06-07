@@ -39,6 +39,95 @@
 }
 @keyframes blink { 50% { opacity: 0; } }
 
+/* ---------- TOAST "¿Sabías que...?" ---------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 80;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  padding: 1.1rem 1.2rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 20, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(52, 211, 153, 0.05);
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.toast-in {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.toast-close {
+  position: absolute;
+  top: 8px; right: 10px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.toast-close:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+
+.toast-head {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.toast-body {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0 0 0.9rem;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.toast-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.toast-cta {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+.toast-cta:hover { text-decoration: underline; }
+
+.toast-dots { display: flex; gap: 5px; }
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.3s, width 0.3s;
+}
+.dot.on { background: var(--accent); width: 16px; border-radius: 3px; }
+
+@media (max-width: 560px) {
+  .toast {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}
+
 /* ---------- SPOTLIGHT en tarjetas ---------- */
 .card, .stat, .cta { position: relative; }
 .card::before, .stat::before, .cta::before {

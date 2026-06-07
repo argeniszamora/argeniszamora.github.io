@@ -136,13 +136,49 @@ function CursorGlow() {
   return <div ref={ref} className="cursor-glow" aria-hidden="true" />;
 }
 
+/* ---------- Toast "¿Sabías que...?" (aparece a los 5s) ---------- */
+function SabiasQue({ facts, email }) {
+  const [show, setShow] = useState(false);
+  const [closed, setClosed] = useState(false);
+  const [idx, setIdx] = useState(0);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), 5000);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (!show) return;
+    const r = setInterval(() => setIdx((p) => (p + 1) % facts.length), 6500);
+    return () => clearInterval(r);
+  }, [show, facts.length]);
+
+  if (!facts?.length || closed) return null;
+
+  return (
+    <div className={`toast ${show ? "toast-in" : ""}`} role="status">
+      <button className="toast-close" onClick={() => setClosed(true)} aria-label="Cerrar">×</button>
+      <div className="toast-head">💡 ¿Sabías que…?</div>
+      <p key={idx} className="toast-body">{facts[idx]}</p>
+      <div className="toast-foot">
+        <a href={`mailto:${email}`} className="toast-cta">Hablemos →</a>
+        <div className="toast-dots">
+          {facts.map((_, i) => (
+            <span key={i} className={`dot ${i === idx ? "on" : ""}`} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const initials = (name) =>
   name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 
 function App() {
   useScrollReveal();
   const {
-    nombre, titulo, roles, resumen, contacto,
+    nombre, titulo, roles, resumen, contacto, sabiasQue,
     logros, experiencia, educacion, certificaciones, habilidades,
   } = cvData;
 
@@ -150,6 +186,7 @@ function App() {
     <div className="cv">
       <ScrollProgress />
       <CursorGlow />
+      <SabiasQue facts={sabiasQue} email={contacto.email} />
 
       {/* ---------- NAV ---------- */}
       <nav className="nav">

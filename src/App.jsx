@@ -35,6 +35,7 @@ function TypeWriter({ words }) {
 /* ---------- Contador animado ---------- */
 function CountUp({ raw }) {
   const ref = useRef(null);
+  const done = useRef(false);
   const [val, setVal] = useState(0);
   const m = String(raw).match(/^([^\d]*)(\d+(?:\.\d+)?)(.*)$/);
   const prefix = m ? m[1] : "";
@@ -43,11 +44,13 @@ function CountUp({ raw }) {
   const suffix = m ? m[3] : raw;
 
   useEffect(() => {
-    if (!m) return;
+    if (!ref.current || done.current) return;
     const el = ref.current;
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) {
+        if (e.isIntersecting && !done.current) {
+          done.current = true;
+          io.disconnect();
           const dur = 1300;
           const start = performance.now();
           const tick = (now) => {
@@ -57,14 +60,15 @@ function CountUp({ raw }) {
             if (p < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
-          io.disconnect();
         }
       },
       { threshold: 0.5 }
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [m, target]);
+    // solo depende del valor objetivo (primitivo), no del objeto match
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target]);
 
   if (!m) return <>{raw}</>;
   return (

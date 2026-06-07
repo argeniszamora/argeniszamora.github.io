@@ -175,8 +175,24 @@ function SabiasQue({ facts, email }) {
 const initials = (name) =>
   name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 
+/* ---------- Easter egg en la consola del navegador ---------- */
+function useConsoleEgg(email) {
+  useEffect(() => {
+    console.log(
+      "%c👋 ¿Curioseando el código?",
+      "color:#34d399;font-size:20px;font-weight:bold;font-family:monospace"
+    );
+    console.log(
+      "%cEste CV lo construí dirigiendo a Claude Code (IA): datos reales extraídos por API y todo automatizado.\nSi buscas a alguien que combine growth + tech, hablemos 👇",
+      "color:#93a39b;font-size:13px;line-height:1.5"
+    );
+    console.log(`%c📧 ${email}`, "color:#22d3ee;font-size:14px;font-weight:bold");
+  }, [email]);
+}
+
 function App() {
   useScrollReveal();
+  useConsoleEgg(cvData.contacto.email);
   const {
     nombre, titulo, roles, resumen, contacto, sabiasQue,
     logros, experiencia, educacion, certificaciones, habilidades,
@@ -334,7 +350,14 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>© {new Date().getFullYear()} {nombre} · Hecho con React + Vite</p>
+        <p className="footer-credit">
+          Diseñado y construido por <strong>{nombre}</strong>
+          <span className="footer-x">×</span>
+          <span className="footer-claude">Claude Code 🤖</span>
+        </p>
+        <p className="footer-sub">
+          © {new Date().getFullYear()} · React + Vite · Datos reales vía API · Abre la consola 👀
+        </p>
       </footer>
     </div>
   );

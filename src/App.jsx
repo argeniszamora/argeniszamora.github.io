@@ -78,6 +78,125 @@ function CountUp({ raw }) {
   );
 }
 
+/* ---------- Fondo "plexus": red de puntos que se conectan ---------- */
+function ParticleNetwork() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+
+    let w, h, dpr, particles, raf;
+    const mouse = { x: -9999, y: -9999 };
+    const LINK = 140; // distancia máx. para dibujar línea entre puntos
+
+    const resize = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.clientWidth;
+      h = canvas.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      // densidad según área (menos en móvil), con tope
+      const isMobile = w < 768;
+      const count = Math.min(isMobile ? 40 : 110, Math.floor((w * h) / 13000));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+      }));
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, w, h);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        // rebote suave en los bordes
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+
+        // líneas entre puntos cercanos
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < LINK) {
+            const a = (1 - dist / LINK) * 0.5;
+            ctx.strokeStyle = `rgba(52, 211, 153, ${a})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        }
+
+        // conexión + brillo con el mouse
+        const mdx = p.x - mouse.x;
+        const mdy = p.y - mouse.y;
+        const md = Math.hypot(mdx, mdy);
+        const near = md < 180;
+        if (near) {
+          const a = (1 - md / 180) * 0.6;
+          ctx.strokeStyle = `rgba(34, 211, 238, ${a})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+
+        // punto
+        ctx.fillStyle = near ? "rgba(34, 211, 238, 0.95)" : "rgba(52, 211, 153, 0.85)";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, near ? 2.4 : 1.7, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    if (reduce) {
+      draw();              // un solo frame estático
+      cancelAnimationFrame(raf);
+    } else {
+      draw();
+    }
+
+    const onMove = (e) => { mouse.x = e.clientX; mouse.y = e.clientY; };
+    const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
+    const onResize = () => resize();
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerleave", onLeave);
+    window.addEventListener("resize", onResize);
+
+    // pausa cuando la pestaña no está visible (ahorra batería)
+    const onVis = () => {
+      if (document.hidden) cancelAnimationFrame(raf);
+      else if (!reduce) raf = requestAnimationFrame(draw);
+    };
+    document.addEventListener("visibilitychange", onVis);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerleave", onLeave);
+      window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, []);
+
+  return <canvas ref={ref} className="bg-canvas" aria-hidden="true" />;
+}
+
 /* ---------- Luz que sigue el cursor en tarjetas ---------- */
 const spot = (e) => {
   const r = e.currentTarget.getBoundingClientRect();
@@ -204,12 +323,11 @@ function App() {
 
   return (
     <div className="cv">
-      {/* Fondo animado high-tech (grilla + orbes), detrás de todo */}
+      {/* Fondo animado high-tech (red de puntos + orbes), detrás de todo */}
       <div className="bg-tech" aria-hidden="true">
-        <div className="bg-grid" />
         <div className="bg-orb bg-orb-1" />
         <div className="bg-orb bg-orb-2" />
-        <div className="bg-scan" />
+        <ParticleNetwork />
       </div>
 
       <ScrollProgress />

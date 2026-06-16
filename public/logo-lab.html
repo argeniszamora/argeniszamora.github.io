@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Logo Lab · Argenis Zamora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --green:#19E08E; --ink:#06231A; --bg:#070b0a; --card:#0c1311; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:#e6efe9; font-family:'Inter',sans-serif; padding:48px 20px 80px; }
+    .wrap { max-width: 920px; margin:0 auto; }
+    h1 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:2rem; margin:0 0 6px; }
+    h1 span { color: var(--green); }
+    .sub { color:#93a39b; margin:0 0 40px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:22px; }
+    .card { background:var(--card); border:1px solid rgba(25,224,142,0.2); border-radius:18px; padding:26px; }
+    .tag { font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--green); font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
+    .name { font-weight:600; margin:4px 0 22px; font-size:1.1rem; }
+    .stage { display:grid; place-items:center; height:130px; background:#060a09; border-radius:12px; }
+    .desc { color:#93a39b; font-size:.84rem; margin-top:18px; line-height:1.55; }
+    .note { margin-top:40px; color:#93a39b; font-size:.92rem; line-height:1.6; }
+    .note strong { color:#e6efe9; }
+    svg { display:block; overflow:visible; }
+
+    /* ===== Animación A: barras que suben (estilo Google Analytics) ===== */
+    .a-badge { transform-box:fill-box; transform-origin:center; animation: aPop .6s cubic-bezier(.34,1.56,.64,1) both; }
+    .a-text { animation: aWipe .6s ease .25s both; }
+    .a-dot  { transform-box:fill-box; transform-origin:center; animation: barRise 5s ease-in-out infinite; }
+    .a-bar1 { transform-box:fill-box; transform-origin:bottom; animation: barRise 5s ease-in-out .9s infinite; }
+    .a-bar2 { transform-box:fill-box; transform-origin:bottom; animation: barRise 5s ease-in-out 1.1s infinite; }
+    @keyframes aPop { 0%{transform:scale(.3) rotate(-14deg);opacity:0} 60%{transform:scale(1.08);opacity:1} 100%{transform:scale(1)} }
+    @keyframes aWipe { from{clip-path:inset(0 100% 0 0);opacity:0} to{clip-path:inset(0 0 0 0);opacity:1} }
+    @keyframes barRise {
+      0%,10% { transform: scaleY(0); opacity:0; }
+      18%    { transform: scaleY(1.08); opacity:1; }
+      24%    { transform: scaleY(1); opacity:1; }
+      78%    { transform: scaleY(1); opacity:1; }
+      88%,100% { transform: scaleY(0); opacity:0; }
+    }
+    /* el dot usa escala uniforme, no scaleY */
+    @keyframes dotRise {
+      0%,6% { transform: scale(0); opacity:0; }
+      16%   { transform: scale(1.15); opacity:1; }
+      22%   { transform: scale(1); opacity:1; }
+      80%   { transform: scale(1); opacity:1; }
+      90%,100% { transform: scale(0); opacity:0; }
+    }
+    .a-dot { animation-name: dotRise; }
+
+    /* ===== Animación B: carita sonriente (estilo CHV) ===== */
+    .b-badge { transform-box:fill-box; transform-origin:center; animation: aPop .6s cubic-bezier(.34,1.56,.64,1) both, bBreathe 5s ease-in-out infinite; }
+    .b-a    { animation: bShowA 5s ease-in-out infinite; }
+    .b-face { animation: bShowFace 5s ease-in-out infinite; }
+    @keyframes bShowA {
+      0%,38% { opacity:1; } 46%,86% { opacity:0; } 94%,100% { opacity:1; }
+    }
+    @keyframes bShowFace {
+      0%,40% { opacity:0; transform:scale(.7); } 50%,84% { opacity:1; transform:scale(1); } 92%,100% { opacity:0; transform:scale(.7); }
+    }
+    .b-face { transform-box:fill-box; transform-origin:center; }
+    @keyframes bBreathe { 0%,40%,100%{transform:scale(1)} 55%{transform:scale(1.06)} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Logo Lab · <span>animaciones</span></h1>
+    <p class="sub">Cada animación se repite en loop (~5s). Mira cuál te gusta más para integrarla en el logo definitivo.</p>
+
+    <div class="grid">
+
+      <!-- ===== A: barras subiendo ===== -->
+      <div class="card">
+        <div class="tag">Versión A</div>
+        <div class="name">Métrica en barras (estilo Analytics)</div>
+        <div class="stage">
+          <svg width="320" height="90" viewBox="0 0 340 90">
+            <rect class="a-badge" x="4" y="16" width="56" height="56" rx="20" fill="#19E08E"/>
+            <text class="a-badge" x="32" y="58" text-anchor="middle" font-family="'Quicksand',sans-serif" font-weight="700" font-size="40" fill="#06231A">a</text>
+            <text class="a-text" x="74" y="59" font-family="'Quicksand',sans-serif" font-weight="700" font-size="42" letter-spacing="-1" fill="#e6efe9">argenis</text>
+            <!-- chart: dot + 2 barras ascendentes -->
+            <circle class="a-dot" cx="256" cy="68" r="8" fill="#19E08E"/>
+            <rect class="a-bar1" x="278" y="36" width="17" height="36" rx="8.5" fill="#19E08E"/>
+            <rect class="a-bar2" x="306" y="18" width="17" height="54" rx="8.5" fill="#2ff0a0"/>
+          </svg>
+        </div>
+        <p class="desc">El logo aparece y, tras un momento, sube una métrica en barras redondeadas (pelotita + 2 barras). Justo tu rubro: crecimiento.</p>
+      </div>
+
+      <!-- ===== B: carita sonriente ===== -->
+      <div class="card">
+        <div class="tag">Versión B</div>
+        <div class="name">Se vuelve carita 🙂 (estilo CHV)</div>
+        <div class="stage">
+          <svg width="320" height="90" viewBox="0 0 340 90">
+            <g class="b-badge">
+              <rect x="4" y="16" width="56" height="56" rx="20" fill="#19E08E"/>
+              <text class="b-a" x="32" y="58" text-anchor="middle" font-family="'Quicksand',sans-serif" font-weight="700" font-size="40" fill="#06231A">a</text>
+              <g class="b-face" fill="none">
+                <circle cx="22" cy="38" r="4.2" fill="#06231A"/>
+                <circle cx="42" cy="38" r="4.2" fill="#06231A"/>
+                <path d="M20 50 Q32 64 44 50" stroke="#06231A" stroke-width="4.5" stroke-linecap="round"/>
+              </g>
+            </g>
+            <text class="a-text" x="74" y="59" font-family="'Quicksand',sans-serif" font-weight="700" font-size="42" letter-spacing="-1" fill="#e6efe9">argenis</text>
+          </svg>
+        </div>
+        <p class="desc">El símbolo "a" del badge se transforma en una carita sonriente y vuelve. Más simpático/cercano, guiño tipo Chilevisión.</p>
+      </div>
+
+    </div>
+
+    <p class="note">
+      <strong>¿Cuál te gusta?</strong> Dime <strong>"la A"</strong> (barras subiendo) o <strong>"la B"</strong> (carita).
+      Después la integro en el logo del menú y ajustamos timing, tamaño y colores.
+      Si quieres una mezcla o algún cambio (ej. 3 barras en vez de 2, o la carita con otra forma de sonrisa), también lo afino.
+    </p>
+  </div>
+</body>
+</html>

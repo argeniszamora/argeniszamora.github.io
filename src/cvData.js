@@ -138,6 +138,9 @@ export const cvData = {
     { nombre: "Clínica Cela" },
     { nombre: "ATM" },
     { nombre: "Admente" },
+    { nombre: "Imactions" },
+    { nombre: "LexLatin" },
+    { nombre: "Web Designs Colorado" },
   ],
 
   // ---- Habilidades (agrupadas por categoría) ----

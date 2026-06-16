@@ -138,11 +138,10 @@ export const cvData = {
     { nombre: "Kinesso", logo: "/logos/kinesso.svg" },
     { nombre: "Keenfounders", logo: "/logos/keenfounders.png" },
     { nombre: "Clínica Cela", logo: "/logos/cela.png" },
-    { nombre: "ATM" },
+    { nombre: "ATM", logo: "/logos/atm.jpg" },
     { nombre: "Admente", logo: "/logos/admente.png" },
     { nombre: "Imactions", logo: "/logos/imactions.jpg" },
     { nombre: "LexLatin", logo: "/logos/lexlatin.webp" },
-    { nombre: "Web Designs Colorado" },
   ],
 
   // ---- Habilidades (agrupadas por categoría) ----

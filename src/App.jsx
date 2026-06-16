@@ -313,15 +313,35 @@ function LogoMark({ size = 96, className = "" }) {
 
 /* ---------- Logo animado: wordmark completo (nav) ---------- */
 function LogoWordmark() {
+  // Cambiar `run` remonta el SVG y reinicia la animación (al cargar y al hover)
+  const [run, setRun] = useState(0);
   return (
-    <svg className="logo-word" width="158" height="44" viewBox="0 0 290 84"
-      role="img" aria-label="argenis">
+    <svg
+      key={run}
+      className="logo-word" width="180" height="47" viewBox="0 0 320 84"
+      role="img" aria-label="argenis · growing together"
+      onMouseEnter={() => setRun((r) => r + 1)}
+    >
       <rect className="lw-badge" x="4" y="14" width="56" height="56" rx="20" fill="#19E08E" />
+
+      {/* letra "a" (se desvanece cuando entra la métrica) */}
       <text className="lw-a" x="32" y="56" textAnchor="middle"
         fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="40" fill="#06231A">a</text>
+
+      {/* métrica que brota dentro del cuadro */}
+      <g fill="#06231A">
+        <circle className="lw-dot" cx="18" cy="56" r="4.5" />
+        <rect className="lw-b1" x="28" y="40" width="9" height="18" rx="4.5" />
+        <rect className="lw-b2" x="43" y="28" width="9" height="30" rx="4.5" />
+      </g>
+
+      {/* "argenis" (se borra de retroceso) */}
       <text className="lw-text" x="74" y="57"
         fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="42" letterSpacing="-1">argenis</text>
-      <circle className="lw-dot" cx="276" cy="52" r="5" fill="#19E08E" />
+
+      {/* tagline que entra de izquierda a derecha */}
+      <text className="lw-tag" x="74" y="53"
+        fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="26" letterSpacing="-0.3" fill="#19E08E">growing together</text>
     </svg>
   );
 }

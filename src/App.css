@@ -327,24 +327,18 @@
 }
 .logo-mark { display: block; overflow: visible; filter: drop-shadow(0 12px 30px rgba(25, 224, 142, 0.35)); }
 
-/* Elementos animables: origen de transformación al centro de cada forma */
-.lm-badge, .lw-badge, .lw-dot {
-  transform-box: fill-box;
-  transform-origin: center;
-}
+/* --- Hero: símbolo "a" (pop con rebote + respiración en loop) --- */
+.lm-badge { transform-box: fill-box; transform-origin: center; animation: logoPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both, logoBreathe 4.5s ease-in-out 1.1s infinite; }
+.lm-letter { animation: logoFade 0.4s ease 0.35s both; }
 
-/* Entrada del badge (pop con rebote) + respiración en loop */
-.lm-badge { animation: logoPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both, logoBreathe 4.5s ease-in-out 1.1s infinite; }
-.lw-badge { animation: logoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
-
-/* La letra "a" aparece suave tras el badge */
-.lm-letter, .lw-a { animation: logoFade 0.4s ease 0.35s both; }
-
-/* El wordmark se revela con un wipe de izquierda a derecha */
-.lw-text { animation: wordWipe 0.6s ease 0.3s both; }
-
-/* El punto final aparece y luego pulsa */
-.lw-dot { animation: logoFade 0.3s ease 0.75s both, dotPulse 2.6s ease-in-out 1.2s infinite; }
+/* --- Nav: secuencia "argenis → métrica → growing together" (1 vez; se repite al hover por remontaje) --- */
+.lw-badge { transform-box: fill-box; transform-origin: center; animation: logoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.lw-a    { animation: lwHideLetter 6s ease both; }
+.lw-text { animation: lwBackspace 6s ease both; }
+.lw-tag  { animation: lwTagIn 6s ease both; }
+.lw-dot  { transform-box: fill-box; transform-origin: center; animation: lwRiseDot 6s ease both; }
+.lw-b1   { transform-box: fill-box; transform-origin: bottom; animation: lwRise1 6s ease both; }
+.lw-b2   { transform-box: fill-box; transform-origin: bottom; animation: lwRise2 6s ease both; }
 
 @keyframes logoPop {
   0%   { transform: scale(0.3) rotate(-14deg); opacity: 0; }
@@ -359,24 +353,37 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-@keyframes wordWipe {
-  from { clip-path: inset(0 100% 0 0); opacity: 0; }
-  to   { clip-path: inset(0 0 0 0); opacity: 1; }
-}
-@keyframes dotPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%      { transform: scale(1.7); opacity: 0.45; }
-}
 
-/* Brillo al pasar el mouse por el logo del nav */
-.nav-brand:hover .lw-badge { animation: logoBreathe 0.6s ease; }
+/* "argenis": visible → se borra de derecha a izquierda → oculto → vuelve */
+@keyframes lwBackspace {
+  0%, 14%  { clip-path: inset(0 0 0 0); opacity: 1; }
+  32%      { clip-path: inset(0 100% 0 0); opacity: 1; }
+  33%, 90% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  97%, 100%{ clip-path: inset(0 0 0 0); opacity: 1; }
+}
+/* la letra "a" se desvanece cuando entra la métrica */
+@keyframes lwHideLetter { 0%,34%{opacity:1} 41%,92%{opacity:0} 98%,100%{opacity:1} }
+/* "growing together" entra de izquierda a derecha */
+@keyframes lwTagIn {
+  0%, 40%  { clip-path: inset(0 100% 0 0); opacity: 0; }
+  44%      { opacity: 1; }
+  60%      { clip-path: inset(0 0 0 0); opacity: 1; }
+  88%      { clip-path: inset(0 0 0 0); opacity: 1; }
+  93%, 100%{ clip-path: inset(0 100% 0 0); opacity: 0; }
+}
+/* la métrica sube dentro del cuadro */
+@keyframes lwRiseDot { 0%,38%{transform:scale(0);opacity:0} 45%{transform:scale(1.15);opacity:1} 50%{transform:scale(1);opacity:1} 86%{transform:scale(1);opacity:1} 93%,100%{transform:scale(0);opacity:0} }
+@keyframes lwRise1 { 0%,41%{transform:scaleY(0);opacity:0} 48%{transform:scaleY(1.08);opacity:1} 53%{transform:scaleY(1);opacity:1} 86%{transform:scaleY(1);opacity:1} 92%,100%{transform:scaleY(0);opacity:0} }
+@keyframes lwRise2 { 0%,45%{transform:scaleY(0);opacity:0} 52%{transform:scaleY(1.08);opacity:1} 57%{transform:scaleY(1);opacity:1} 86%{transform:scaleY(1);opacity:1} 91%,100%{transform:scaleY(0);opacity:0} }
 
 @media (prefers-reduced-motion: reduce) {
-  .lm-badge, .lw-badge, .lm-letter, .lw-a, .lw-text, .lw-dot {
+  .lm-badge, .lm-letter, .lw-badge, .lw-a, .lw-text {
     animation: none !important;
     clip-path: none !important;
     opacity: 1 !important;
   }
+  /* en reposo, sin movimiento: solo "a argenis" legible */
+  .lw-dot, .lw-b1, .lw-b2, .lw-tag { display: none; }
 }
 
 .status {

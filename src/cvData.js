@@ -99,7 +99,7 @@ export const cvData = {
       ],
     },
     {
-      puesto: "Especialista SEO y SEM",
+      puesto: "Encargado SEO & SEM",
       empresa: "Clínica Cela (estética y depilación láser) · Chile y Colombia",
       periodo: "2021 – 2023",
       descripcion: [

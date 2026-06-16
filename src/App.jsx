@@ -295,8 +295,36 @@ function SabiasQue({ facts, email }) {
   );
 }
 
-const initials = (name) =>
-  name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+/* ---------- Logo animado: solo el símbolo "a" (hero / favicon) ---------- */
+function LogoMark({ size = 96, className = "" }) {
+  return (
+    <svg
+      className={`logo-mark ${className}`}
+      width={size} height={size}
+      viewBox="0 0 120 120"
+      role="img" aria-label="Argenis Zamora"
+    >
+      <rect className="lm-badge" x="10" y="10" width="100" height="100" rx="34" fill="#19E08E" />
+      <text className="lm-letter" x="60" y="86" textAnchor="middle"
+        fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="64" fill="#06231A">a</text>
+    </svg>
+  );
+}
+
+/* ---------- Logo animado: wordmark completo (nav) ---------- */
+function LogoWordmark() {
+  return (
+    <svg className="logo-word" width="158" height="44" viewBox="0 0 290 84"
+      role="img" aria-label="argenis">
+      <rect className="lw-badge" x="4" y="14" width="56" height="56" rx="20" fill="#19E08E" />
+      <text className="lw-a" x="32" y="56" textAnchor="middle"
+        fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="40" fill="#06231A">a</text>
+      <text className="lw-text" x="74" y="57"
+        fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="42" letterSpacing="-1">argenis</text>
+      <circle className="lw-dot" cx="276" cy="52" r="5" fill="#19E08E" />
+    </svg>
+  );
+}
 
 /* ---------- Easter egg en la consola del navegador ---------- */
 function useConsoleEgg(email) {
@@ -336,7 +364,7 @@ function App() {
 
       {/* ---------- NAV ---------- */}
       <nav className="nav">
-        <a href="#top" className="nav-brand">{initials(nombre)}</a>
+        <a href="#top" className="nav-brand" aria-label="Inicio"><LogoWordmark /></a>
         <div className="nav-links">
           <a href="#experiencia">Experiencia</a>
           <a href="#skills">Skills</a>
@@ -349,7 +377,7 @@ function App() {
       <header id="top" className="hero">
         <div className="hero-glow" />
         <div className="hero-content">
-          <div className="avatar"><span>{initials(nombre)}</span></div>
+          <div className="avatar"><LogoMark size={96} /></div>
 
           <div className="status">
             <span className="status-dot" /> Disponible para nuevos proyectos

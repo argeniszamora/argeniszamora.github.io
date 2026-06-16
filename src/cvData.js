@@ -132,14 +132,14 @@ export const cvData = {
   // Si no hay `logo`, se muestra el nombre como wordmark.
   // `via`: si llegaste a esa marca a través de otra (agencia/empresa).
   empresas: [
-    { nombre: "Lasertam", via: "Keenfounders" },
+    { nombre: "Lasertam", via: "Keenfounders", logo: "/logos/lasertam.svg" },
     { nombre: "Softys", via: "Kinesso" },
-    { nombre: "Nestlé", via: "Kinesso" },
-    { nombre: "Clínica Cela" },
+    { nombre: "Nestlé", via: "Kinesso", logo: "/logos/nestle.svg" },
+    { nombre: "Clínica Cela", logo: "/logos/cela.png" },
     { nombre: "ATM" },
     { nombre: "Admente" },
     { nombre: "Imactions" },
-    { nombre: "LexLatin" },
+    { nombre: "LexLatin", logo: "/logos/lexlatin.webp" },
     { nombre: "Web Designs Colorado" },
   ],
 

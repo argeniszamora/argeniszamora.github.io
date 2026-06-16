@@ -6,27 +6,29 @@
 export const cvData = {
   // ---- Datos personales ----
   nombre: "Argenis Zamora",
-  titulo: "Digital Marketing Manager | Growth & Performance",
+  titulo: "Growth & Performance Marketing · E-commerce & Data",
   // Roles que rotan con efecto de máquina de escribir en el hero
   roles: [
     "Growth & Performance",
     "Paid Media (Meta & Google)",
+    "E-commerce & Data",
     "Marketing Automation",
-    "Data & Analytics",
+    "Analítica (GA4 · BigQuery)",
     "SEO técnico",
   ],
   resumen:
-    "Especialista en marketing digital con +6 años de experiencia diseñando y ejecutando " +
-    "estrategias integrales de growth, performance y posicionamiento orgánico en mercados de " +
-    "Chile, Colombia, Argentina, Perú y México. Combino visión estratégica con ejecución técnica " +
-    "en paid media (Meta, Google, LinkedIn), SEO, automatización con n8n y Make, y análisis de " +
-    "datos con GA4 y Looker Studio. Historial comprobado escalando leads calificados, tráfico " +
-    "orgánico y cotizaciones en sectores salud, B2B y consumo masivo.",
+    "Especialista en Growth & Performance Marketing con más de 6 años de experiencia diseñando y " +
+    "ejecutando estrategias de adquisición, performance y analítica en e-commerce, salud y B2B en " +
+    "Chile, Colombia, Argentina, Perú y México. Combino ejecución técnica en paid media (Meta, Google), " +
+    "analítica avanzada (GA4, BigQuery, Looker Studio) y automatización (n8n, Make, Python) con foco en " +
+    "ROAS, eficiencia de inversión y crecimiento de ingresos. Base en Ingeniería de Sistemas, orientado " +
+    "a datos y a la automatización con IA.",
 
   // ---- "¿Sabías que...?" (toast que aparece a los 5s, rota entre estos) ----
   sabiasQue: [
     "Combino marketing con código: uso Python, APIs e IA (Claude Code) para automatizar el growth. Un perfil híbrido poco común.",
     "Casi dupliqué el ROAS de una cuenta de Meta Ads: de ~5.9x a ~10x sostenido (excluyendo eventos Cyber).",
+    "Cyber Monday 2025: lideré una campaña multicanal que generó $46,8MM CLP en ventas, 23% sobre la meta y 4,34x ROAS.",
     "Tengo +6 años escalando growth y performance en 5 países de Latinoamérica.",
     "Construyo mis propias herramientas: desde un monitor de precios con scraping hasta reportería automatizada por API.",
     "Trabajé marcas como Softys y Nestlé liderando SEO técnico y estrategia regional.",
@@ -45,9 +47,9 @@ export const cvData = {
   // ---- Logros destacados (métricas grandes) ----
   logros: [
     { valor: "≈2x", texto: "ROAS en Meta Ads: de 5.9x a ~10x — Lasertam" },
+    { valor: "$46,8MM", texto: "Ventas Cyber Monday 2025 · 4,34x ROAS (Lasertam)" },
+    { valor: "-14%", texto: "Gasto publicitario ineficiente eliminado" },
     { valor: "+80%", texto: "Tráfico orgánico en 4 meses (ATM)" },
-    { valor: "+60%", texto: "Leads calificados generados (ATM)" },
-    { valor: "5 países", texto: "Estrategia regional liderada (Kinesso)" },
   ],
 
   // ---- Experiencia laboral ----
@@ -57,11 +59,11 @@ export const cvData = {
       empresa: "Keenfounders (Cliente: Lasertam) · Santiago, Chile · Híbrido",
       periodo: "Oct 2025 – Presente",
       descripcion: [
-        "Lidero y presento la estrategia de growth y performance para Lasertam, marca de depilación láser en Chile.",
-        "Gestiono la inversión en paid media (Meta y Google Ads) y casi dupliqué el ROAS promedio de la cuenta: de ~5.9x (base previa a mi incorporación) a ~10x sostenido, excluyendo eventos Cyber.",
-        "Audité y optimicé la cuenta —eliminé ~14% de gasto desperdiciado, corregí objetivos de campaña y saturación de audiencias— y automaticé reportería y atribución conectando las APIs (Meta, Google, GA4, WooCommerce) con IA (Claude Code).",
-        "Diseño, armo y envío campañas de email marketing orientadas a generar ventas y conversión directa.",
-        "Desarrollé un sistema automatizado de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions.",
+        "Lidero la estrategia de growth y performance para una red nacional de clínicas de depilación láser (+20 sucursales), aumentando el ROAS de Meta Ads de ~5,9x a ~10x sostenido y eliminando ~14% de gasto ineficiente mediante optimización de campañas y automatización de reportería.",
+        "Cyber Monday 2025: lideré la campaña multicanal (Meta, Google, email, orgánico) alcanzando $46,8MM CLP en ventas atribuidas, 23% sobre meta y 4,34x ROAS.",
+        "Desarrollé dashboards a medida para la toma de decisiones y automaticé la reportería y atribución conectando APIs (Meta, Google, GA4, WooCommerce) con IA (Claude Code), n8n y BigQuery.",
+        "Desarrollé un sistema de monitoreo de precios de competencia (Python, Streamlit, SQLite) con scraping semanal vía GitHub Actions.",
+        "Posicioné el newsletter como un nuevo canal de venta directa en MailerLite mediante secuencias promocionales multietapa.",
       ],
     },
     {
@@ -69,9 +71,9 @@ export const cvData = {
       empresa: "Admente · Remoto",
       periodo: "Jul 2025 – Presente",
       descripcion: [
-        "Gestiono campañas de Meta Ads y Google Ads para múltiples clientes simultáneos, optimizando segmentaciones, creatividades y presupuestos por cuenta.",
-        "Analizo métricas de rendimiento (CTR, CPL, ROAS) y entrego reportes periódicos con recomendaciones de mejora por cliente.",
-        "Adapto estrategias de paid media a distintos sectores y objetivos, manteniendo eficiencia de presupuesto y cumplimiento de KPIs.",
+        "Gestiono campañas de Meta Ads y Google Ads para especialistas médicos (cirugía bariátrica, balón gástrico, consultas y cirugía robótica), con foco en la captación de leads calificados.",
+        "Opero cuentas en Chile y República Dominicana, adaptando segmentación, creatividades y presupuesto a cada mercado y especialidad.",
+        "Analizo CTR, CPL y ROAS y entrego reportes periódicos con recomendaciones de optimización por cuenta.",
       ],
     },
     {
@@ -79,10 +81,10 @@ export const cvData = {
       empresa: "ATM SpA · Santiago, Chile",
       periodo: "Jul 2024 – Jun 2025",
       descripcion: [
-        "Lideré estrategia de marketing integral (paid media, SEO, email y automatización) para clínicas de salud con foco en adquisición B2B.",
-        "Implementé automatización de marketing y CRM con Make y GoHighLevel, reduciendo tiempos de conversión y escalando lead generation.",
-        "Diseñé email marketing multietapa basado en comportamiento, y dashboards de KPI en Looker Studio con A/B testing sistemático.",
-        "Coordiné con equipos de negocio para alinear iniciativas de marketing con objetivos comerciales trimestrales.",
+        "Lideré la estrategia de marketing integral (paid media, SEO, email y automatización) con foco en la generación de leads calificados B2B, segmentados por línea de negocio: dermatología, oftalmología y cirugía.",
+        "Generé +80% de tráfico orgánico en 4 meses y +60% de leads calificados.",
+        "Automaticé la contactabilidad y el seguimiento de leads con Make y GoHighLevel, reduciendo los tiempos de respuesta.",
+        "Implementé email marketing multietapa basado en comportamiento y dashboards de KPI en Looker Studio con A/B testing sistemático.",
       ],
     },
     {
@@ -119,8 +121,9 @@ export const cvData = {
 
   // ---- Certificaciones ----
   certificaciones: [
-    "Google Ads Search Certification",
-    "Google Analytics Individual Qualification",
+    "Curso de Growth Marketing – Coderhouse (2023)",
+    "Google Ads Search Certification – Google (Skillshop)",
+    "Google Analytics Individual Qualification (GAIQ) – Google (Skillshop)",
     "SEO Fundamentals – Semrush",
   ],
 
@@ -135,16 +138,20 @@ export const cvData = {
       items: ["SEO técnico", "On-page", "Off-page", "Keyword Research", "Share of Voice", "Semrush"],
     },
     {
-      categoria: "Analytics",
-      items: ["GA4", "Looker Studio", "Google Tag Manager", "A/B Testing", "Dashboards KPI"],
+      categoria: "Analítica y Data",
+      items: ["GA4", "BigQuery", "Looker Studio", "Google Tag Manager", "SQL", "A/B Testing", "Dashboards KPI"],
+    },
+    {
+      categoria: "E-commerce",
+      items: ["WooCommerce", "Atribución multicanal (UTM)", "Seguimiento de conversiones"],
     },
     {
       categoria: "Email Marketing",
       items: ["Estrategias multietapa", "Segmentación comportamental", "MailerLite", "Mailchimp", "CRM"],
     },
     {
-      categoria: "Automatización",
-      items: ["n8n", "Make (Integromat)", "GoHighLevel", "Flujos de lead gen y nurturing"],
+      categoria: "Automatización & Dev",
+      items: ["n8n", "Make (Integromat)", "GoHighLevel", "Python (Streamlit, SQLite)", "GitHub Actions", "APIs"],
     },
     {
       categoria: "IA & Dev Tools",

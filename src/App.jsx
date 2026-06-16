@@ -204,6 +204,14 @@ function App() {
 
   return (
     <div className="cv">
+      {/* Fondo animado high-tech (grilla + orbes), detrás de todo */}
+      <div className="bg-tech" aria-hidden="true">
+        <div className="bg-grid" />
+        <div className="bg-orb bg-orb-1" />
+        <div className="bg-orb bg-orb-2" />
+        <div className="bg-scan" />
+      </div>
+
       <ScrollProgress />
       <CursorGlow />
       <SabiasQue facts={sabiasQue} email={contacto.email} />

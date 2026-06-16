@@ -4,6 +4,84 @@
 
 .cv { width: 100%; }
 
+/* ---------- FONDO ANIMADO HIGH-TECH ---------- */
+.bg-tech {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg);
+}
+
+/* Grilla tipo blueprint que se desplaza lento */
+.bg-grid {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(rgba(52, 211, 153, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 25%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 25%, #000 30%, transparent 75%);
+  animation: gridPan 26s linear infinite;
+  will-change: transform;
+}
+@keyframes gridPan {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(48px, 48px); }
+}
+
+/* Orbes de gradiente que flotan */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+.bg-orb-1 {
+  width: 460px; height: 460px;
+  top: -130px; left: -90px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.22), transparent 70%);
+  animation: drift1 24s ease-in-out infinite;
+}
+.bg-orb-2 {
+  width: 420px; height: 420px;
+  bottom: -150px; right: -110px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.18), transparent 70%);
+  animation: drift2 30s ease-in-out infinite;
+}
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(70px, 50px); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-60px, -40px); }
+}
+
+/* Línea de barrido que cae lento (toque "scanner") */
+.bg-scan {
+  position: absolute;
+  left: 0; right: 0; height: 240px;
+  top: -240px;
+  background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.06), transparent);
+  animation: scan 9s linear infinite;
+}
+@keyframes scan {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(120vh); }
+}
+
+@media (max-width: 768px) {
+  .bg-orb { filter: blur(60px); }
+  .bg-scan { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid, .bg-orb, .bg-scan { animation: none; }
+  .bg-scan { display: none; }
+}
+
 /* ---------- CURSOR GLOW (sigue el mouse) ---------- */
 .cursor-glow {
   position: fixed;

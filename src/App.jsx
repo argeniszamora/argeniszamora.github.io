@@ -472,7 +472,7 @@ function App() {
             <h3 className="section-title"><span className="hash">#</span> Marcas que confiaron en mí</h3>
             <div className="brands">
               {empresas.map((e, i) => (
-                <div key={i} className="brand" onMouseMove={spot} title={e.nombre}>
+                <div key={i} className={`brand${e.fill ? " brand-fill" : ""}`} onMouseMove={spot} title={e.nombre}>
                   {e.logo
                     ? <img src={e.logo} alt={e.nombre} loading="lazy" />
                     : <span className="brand-name">{e.nombre}</span>}

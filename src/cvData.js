@@ -135,6 +135,7 @@ export const cvData = {
     { nombre: "Lasertam", via: "Keenfounders", logo: "/logos/lasertam.svg" },
     { nombre: "Softys", via: "Kinesso" },
     { nombre: "Nestlé", via: "Kinesso", logo: "/logos/nestle.svg" },
+    { nombre: "Kinesso", logo: "/logos/kinesso.svg" },
     { nombre: "Clínica Cela", logo: "/logos/cela.png" },
     { nombre: "ATM" },
     { nombre: "Admente" },

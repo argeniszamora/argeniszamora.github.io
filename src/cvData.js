@@ -140,6 +140,7 @@ export const cvData = {
     { nombre: "Clínica Cela", logo: "/logos/cela.png" },
     { nombre: "ATM", logo: "/logos/atm.jpg", fill: true },
     { nombre: "Admente", logo: "/logos/admente.png", fill: true },
+    { nombre: "MPS", logo: "/logos/mps.png", via: "Admente" },
     { nombre: "Imactions", logo: "/logos/imactions.jpg" },
     { nombre: "ScarfMe", logo: "/logos/scarfme.png" },
     { nombre: "LexLatin", logo: "/logos/lexlatin.webp" },

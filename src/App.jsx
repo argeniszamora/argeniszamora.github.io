@@ -314,24 +314,14 @@ function LogoMark({ size = 96, className = "" }) {
 /* ---------- Logo animado: wordmark completo (nav) ---------- */
 function LogoWordmark() {
   return (
-    <svg className="logo-word" width="178" height="48" viewBox="0 0 312 84"
+    <svg className="logo-word" width="158" height="44" viewBox="0 0 290 84"
       role="img" aria-label="argenis">
       <rect className="lw-badge" x="4" y="14" width="56" height="56" rx="20" fill="#19E08E" />
       <text className="lw-a" x="32" y="56" textAnchor="middle"
         fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="40" fill="#06231A">a</text>
       <text className="lw-text" x="74" y="57"
         fontFamily="'Quicksand', sans-serif" fontWeight="700" fontSize="42" letterSpacing="-1">argenis</text>
-
-      {/* el punto suelto viaja y se "guarda" dentro de la a */}
-      <circle className="lw-feed" cx="278" cy="52" r="5" fill="#19E08E" />
-
-      {/* de la a brota la métrica en crecimiento */}
-      <g className="lw-growth">
-        <polyline className="lw-line" points="246,66 268,52 286,44 306,22"
-          fill="none" stroke="#19E08E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        <path className="lw-arrow" d="M294,22 L306,22 L306,34"
-          fill="none" stroke="#19E08E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
+      <circle className="lw-dot" cx="276" cy="52" r="5" fill="#19E08E" />
     </svg>
   );
 }

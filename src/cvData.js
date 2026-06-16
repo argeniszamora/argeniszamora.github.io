@@ -130,15 +130,14 @@ export const cvData = {
   // ---- Marcas / empresas con las que ha trabajado ----
   // Para usar logos reales: pon el archivo en public/logos/ y agrega `logo: "/logos/archivo.svg"`.
   // Si no hay `logo`, se muestra el nombre como wordmark.
+  // `via`: si llegaste a esa marca a través de otra (agencia/empresa).
   empresas: [
-    { nombre: "Lasertam" },
-    { nombre: "Softys" },
-    { nombre: "Nestlé" },
-    { nombre: "Kinesso" },
-    { nombre: "ATM" },
+    { nombre: "Lasertam", via: "Keenfounders" },
+    { nombre: "Softys", via: "Kinesso" },
+    { nombre: "Nestlé", via: "Kinesso" },
     { nombre: "Clínica Cela" },
+    { nombre: "ATM" },
     { nombre: "Admente" },
-    { nombre: "Keenfounders" },
   ],
 
   // ---- Habilidades (agrupadas por categoría) ----

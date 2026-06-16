@@ -690,14 +690,22 @@
   gap: 14px;
 }
 .brand {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   min-height: 84px;
   padding: 1rem 1.25rem;
   border: 1px solid var(--line-soft);
   border-radius: 14px;
   background: var(--card);
   transition: border-color 0.25s, transform 0.25s, background 0.25s;
+}
+.brand-via {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-family: var(--mono);
 }
 .brand:hover {
   border-color: var(--accent);

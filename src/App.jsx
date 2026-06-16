@@ -476,6 +476,7 @@ function App() {
                   {e.logo
                     ? <img src={e.logo} alt={e.nombre} loading="lazy" />
                     : <span className="brand-name">{e.nombre}</span>}
+                  {e.via && <span className="brand-via">vía {e.via}</span>}
                 </div>
               ))}
             </div>

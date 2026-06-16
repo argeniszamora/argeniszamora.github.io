@@ -127,6 +127,20 @@ export const cvData = {
     "SEO Fundamentals – Semrush",
   ],
 
+  // ---- Marcas / empresas con las que ha trabajado ----
+  // Para usar logos reales: pon el archivo en public/logos/ y agrega `logo: "/logos/archivo.svg"`.
+  // Si no hay `logo`, se muestra el nombre como wordmark.
+  empresas: [
+    { nombre: "Lasertam" },
+    { nombre: "Softys" },
+    { nombre: "Nestlé" },
+    { nombre: "Kinesso" },
+    { nombre: "ATM" },
+    { nombre: "Clínica Cela" },
+    { nombre: "Admente" },
+    { nombre: "Keenfounders" },
+  ],
+
   // ---- Habilidades (agrupadas por categoría) ----
   habilidades: [
     {

@@ -366,7 +366,7 @@ function App() {
   useConsoleEgg(cvData.contacto.email);
   const {
     nombre, titulo, roles, resumen, contacto, sabiasQue,
-    logros, experiencia, educacion, certificaciones, habilidades,
+    logros, experiencia, educacion, certificaciones, habilidades, empresas,
   } = cvData;
 
   return (
@@ -461,6 +461,22 @@ function App() {
                     {job.descripcion.map((d, j) => <li key={j}>{d}</li>)}
                   </ul>
                 </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ---------- MARCAS / EMPRESAS ---------- */}
+        {empresas?.length > 0 && (
+          <section id="empresas" className="section reveal">
+            <h3 className="section-title"><span className="hash">#</span> Marcas que confiaron en mí</h3>
+            <div className="brands">
+              {empresas.map((e, i) => (
+                <div key={i} className="brand" onMouseMove={spot} title={e.nombre}>
+                  {e.logo
+                    ? <img src={e.logo} alt={e.nombre} loading="lazy" />
+                    : <span className="brand-name">{e.nombre}</span>}
+                </div>
               ))}
             </div>
           </section>

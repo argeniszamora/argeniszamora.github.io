@@ -716,6 +716,9 @@
 }
 .brand:hover img { opacity: 1; transform: scale(1.05); }
 
+/* Logos monocromos en blanco (HOMS): se invierten a oscuro para tarjeta blanca */
+.brand-invert img { filter: invert(1); }
+
 /* Logos que ya traen su propio fondo (ATM, Admente): llenan toda la tarjeta */
 .brand-fill { padding: 0; overflow: hidden; }
 .brand-fill img {

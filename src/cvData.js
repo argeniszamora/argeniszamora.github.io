@@ -141,6 +141,8 @@ export const cvData = {
     { nombre: "ATM", logo: "/logos/atm.jpg", fill: true },
     { nombre: "Admente", logo: "/logos/admente.png", fill: true },
     { nombre: "MPS", logo: "/logos/mps.png", via: "Admente" },
+    { nombre: "MEDS", logo: "/logos/meds.svg", via: "Admente" },
+    { nombre: "HOMS", logo: "/logos/homs.png", via: "Admente", invert: true },
     { nombre: "Imactions", logo: "/logos/imactions.jpg" },
     { nombre: "ScarfMe", logo: "/logos/scarfme.png" },
     { nombre: "LexLatin", logo: "/logos/lexlatin.webp" },

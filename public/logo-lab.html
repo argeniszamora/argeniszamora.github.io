@@ -29,6 +29,7 @@
     /* ===== Animación A: "argenis" se borra y la "a" se vuelve métrica ===== */
     .a-badge  { transform-box:fill-box; transform-origin:center; animation: aPop .6s cubic-bezier(.34,1.56,.64,1) both; }
     .a-text   { animation: aBackspace 6s ease infinite; }
+    .a-tag    { animation: aTagIn 6s ease infinite; }
     .a-letter { animation: aHideLetter 6s ease infinite; }
     .a-dot { transform-box:fill-box; transform-origin:center; animation: aRiseDot 6s ease infinite; }
     .a-b1  { transform-box:fill-box; transform-origin:bottom; animation: aRise1 6s ease infinite; }
@@ -43,6 +44,14 @@
     }
     /* la letra "a" se desvanece cuando entra la métrica */
     @keyframes aHideLetter { 0%,34%{opacity:1} 41%,92%{opacity:0} 98%,100%{opacity:1} }
+    /* "growth together" entra de izquierda a derecha tras borrarse argenis */
+    @keyframes aTagIn {
+      0%,40%   { clip-path: inset(0 100% 0 0); opacity:0; }
+      44%      { opacity:1; }
+      60%      { clip-path: inset(0 0 0 0); opacity:1; }
+      88%      { clip-path: inset(0 0 0 0); opacity:1; }
+      93%,100% { clip-path: inset(0 100% 0 0); opacity:0; }
+    }
     @keyframes aRiseDot { 0%,38%{transform:scale(0);opacity:0} 45%{transform:scale(1.15);opacity:1} 50%{transform:scale(1);opacity:1} 86%{transform:scale(1);opacity:1} 93%,100%{transform:scale(0);opacity:0} }
     @keyframes aRise1 { 0%,41%{transform:scaleY(0);opacity:0} 48%{transform:scaleY(1.08);opacity:1} 53%{transform:scaleY(1);opacity:1} 86%{transform:scaleY(1);opacity:1} 92%,100%{transform:scaleY(0);opacity:0} }
     @keyframes aRise2 { 0%,45%{transform:scaleY(0);opacity:0} 52%{transform:scaleY(1.08);opacity:1} 57%{transform:scaleY(1);opacity:1} 86%{transform:scaleY(1);opacity:1} 91%,100%{transform:scaleY(0);opacity:0} }
@@ -85,9 +94,11 @@
             </g>
             <!-- "argenis" (se borra de retroceso) -->
             <text class="a-text" x="74" y="59" font-family="'Quicksand',sans-serif" font-weight="700" font-size="42" letter-spacing="-1" fill="#e6efe9">argenis</text>
+            <!-- tagline que entra de izquierda a derecha -->
+            <text class="a-tag" x="74" y="55" font-family="'Quicksand',sans-serif" font-weight="700" font-size="27" letter-spacing="-0.3" fill="#19E08E">growth together</text>
           </svg>
         </div>
-        <p class="desc">"argenis" se borra de retroceso, queda el cuadro, y la "a" se transforma en una métrica (pelotita + barras) que sube dentro del cuadro. Luego vuelve y se repite.</p>
+        <p class="desc">"argenis" se borra de retroceso → la "a" se vuelve métrica que sube en el cuadro → y entra "growth together" de izquierda a derecha. Luego vuelve y se repite.</p>
       </div>
 
       <!-- ===== B: carita sonriente ===== -->
